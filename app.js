@@ -1,26 +1,24 @@
-const PI = 3.14;
-console.log(PI);
-
-PI = 3;
-console.log(PI);
-
-const PI = 4;
-console.log(PI);
-
-var PI = 5;
-console.log(PI);
+const filterOutOdds = (...arguments) =>
+arguments.filter((num) => num % 2 ===0);
 
 
-//1.What is the difference between var and let?
-//var is function scoped and let is block scoped.
+const numeros = [2, 4, 6, 8, 10, 1, 1.25]
+const findMin = (...nums) => {
+    return nums.reduce((min, next) => min < next ? min : next)
+}
+console.log(findMin(...numeros));
 
-//2.What is the difference between var and const?
-//You can reassign and redeclare with var, but you can not redeclare or reassign using the const keyword. You can access a hoisted variable with var. Const creates block scope.
+const firstList = {a:1, b:2};
+const secondList = {c:3, d:4};
+const mergeObjects = (a, b) => ({...a, ...b}); // need parenthesis, otherwise error
+console.log(mergeObjects(firstList, secondList));
 
-//3.What is the difference between let and const?
-//You can reassign with let, but you can not redeclare or reassign using the const keyword.
 
-//4.What is hoisting?
-
-//It’s the way that we explain how the JS compiler works. Variables are lifting or “hoisted” to the top of the scope they are declared in. When using var, you can access the variable name and it’s undefined value before it is used later on.
-
+const doubleAndReturnArgs = (arr, ...more) => {
+    const double = more.map((v) => v * 2);
+    return [...arr, ...double];
+  }
+  console.log(doubleAndReturnArgs([1,2,3],4,4));
+  console.log(doubleAndReturnArgs([2],10,4));
+  
+  
