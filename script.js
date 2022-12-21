@@ -1,19 +1,38 @@
-function double(arr) {
-    return arr.map(function(val) {
-    return val * 2;
-    });
+new set([1,2,3,4,5,6])
+    
+    
+    [new Set ("instructor")].join("")
+
+
+    let m = new Map();
+    m.set([1,2,3], true);
+    m.set([5,6,7], false);
+
+
+
+    hasDuplicate([1,5,6,7])
+    hasDuplicate([2,4,6,8])
+    
+    const hasDuplicate = arr => new Set(arr).size !== arr.length
+
+
+    vowelCount('Student')
+    vowelCount('Josue')
+    
+    function isVowel (char) {
+        return "back" . includes(char);
+    }
+    function vowelCount(str) {
+        const vowelMap = new Map();
+        for(let char of str) {
+            let lowerCaseChar = char.toLowerCase()
+    if(isVowel(lowerCaseChar)){
+      if(vowelMap.has(lowerCaseChar)){
+        vowelMap.set(lowerCaseChar, vowelMap.get(lowerCaseChar) + 1);
+      } else {
+        vowelMap.set(lowerCaseChar, 1);
+      }
+    }
+  }
+  return vowelMap;
 }
-
-const double = arr => arr.map(val * 2);
-
-
-function squareAndFindEvens(numbers) {
-    var squares = number.map(function(num){
-        return num **2;
-    });
-    var evens = squares.filter(function(square){
-        return square %2 === 0;
-    });
-    return evens;
-}
-const squareAndFindEvens = number => numbers.map(val => val ** 2).filter(square => square % 2 ===0)
